@@ -1,0 +1,178 @@
+:root {
+    --background-light-top: #9b9b9b;
+    --background-light-bottom: #363636;
+    --background-dark-top: #9b9b9b;
+    --background-dark-bottom: #ffffff;
+    --message-light: #ADD8E6;
+    --message-dark: #363636;
+    --user-message-light: #b4e30d;
+    --user-message-dark: #4b4b4b;
+    --bot-message-light: #0db4e3;
+    --bot-message-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-dark: #000000;
+}
+
+body {
+    background-image: linear-gradient(to bottom, var(--background-light-top-top), var(--background-light-bottom));
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#recipeList {
+    background-color: var(--message-light);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 60%;
+    flex-wrap: wrap;
+    border: var(--background-light-bottom) solid 3px;
+}
+
+.userMessage {
+    background-color: var(--user-message-light);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    align-self: flex-end;
+}
+
+.botMessage {
+    background-color: var(--bot-message-light);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    align-self: flex-start;
+}
+
+#sendButton {
+    color: var(--text-light);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 5px;
+    border: 1px solid var(--background-light-bottom);
+}
+
+#newMessage {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid var(--background-light-bottom);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#inputArea {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: center;
+    background-color: var(--message-light);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0;
+    padding-top: 0;
+    bottom: 0;
+    border: var(--background-light-bottom) solid 3px;
+}
+
+h2 {
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--message-light);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    top: 0;
+    border: var(--background-light-bottom) solid 3px;
+
+}
+
+ion-icon {
+    font-size: 24px;
+    color: var(--background-light-bottom);
+}
+
+#darkMode {
+    background-color: var(--background-light-bottom);
+    border: 1px solid var(--background-dark-top);
+    color: var(--text-light);
+    padding: 7px 10px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#lightMode {
+    background-color: var(--background-dark-bottom);
+    border: 1px solid var(--background-light-bottom);
+    color: var(--text-dark);
+    padding: 7px 10px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+body.dark-mode {
+    background-image: linear-gradient(to bottom, var(--background-dark-top), var(--background-dark-bottom));
+}
+
+body.dark-mode #recipeList {
+    background-color: var(--message-dark);
+    border: var(--background-dark-top) solid 3px;
+}
+
+body.dark-mode .userMessage {
+    background-color: var(--user-message-dark);
+    color: var(--text-light);
+}
+
+body.dark-mode .botMessage {
+    background-color: var(--bot-message-dark);
+    color: var(--text-light);
+}
+
+body.dark-mode #sendButton {
+    color: var(--text-dark);
+    border: 1px solid var(--background-dark-top);
+}
+
+body.dark-mode #newMessage {
+    border: 1px solid var(--background-dark-top);
+}
+
+body.dark-mode #inputArea {
+    background-color: var(--message-dark);
+    border: var(--background-dark-top) solid 3px;
+}
+
+body.dark-mode h2 {
+    background-color: var(--message-dark);
+    border: var(--background-dark-top) solid 3px;
+    color: var(--text-light);
+}
+
+body.dark-mode ion-icon {
+    color: var(--background-dark-top);
+}
