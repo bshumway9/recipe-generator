@@ -1,5 +1,8 @@
 console.log('connected');
-// console.log(fetch('http://localhost:8080/rollercoasters'));
+
+const apiURL = window.location.protocol === 'file:' ? 'http://localhost:8080'//local api
+: '';//production api
+
 let inputArea = document.querySelector('#inputArea');
 let messageFeed = document.querySelector('#messageFeed');
 let messageInput = document.querySelector('#newMessage');
