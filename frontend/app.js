@@ -61,8 +61,8 @@ async function generateRecipes() {
     ingredients = formatMessageToIngredients(unformattedIngredients);
     // console.log(ingredients);
     let body = 'ingredients=' + encodeURIComponent(ingredients);
-    link = 'http://localhost:8080/recipes/gen';
-    altLink = 'http://localhost:8080/recipes/gen';
+    link = apiURL + '/recipes/gen';
+    altLink = apiURL + '/recipes/gen';
     if (ingredientsChoice.innerHTML === 'Any') {
         link = altLink;
         body += '&type=' + encodeURIComponent('any');
@@ -96,7 +96,7 @@ async function generateRecipes() {
     }
 
 async function getRecipes() {
-    let response = await fetch('http://localhost:8080/recipes', 
+    let response = await fetch(apiURL + '/recipes', 
     {
         method: 'GET',
         headers: {
@@ -120,7 +120,7 @@ async function getRecipes() {
 
 async function updateRecipe(recipe) {
     let body = 'name=' + encodeURIComponent(recipe.name) + '&ingredients=' + encodeURIComponent(JSON.stringify(recipe.ingredients)) + '&instructions=' + encodeURIComponent(recipe.instructions) + '&time=' + encodeURIComponent(recipe.time) + '&rating=' + encodeURIComponent(recipe.rating);
-    await fetch(`http://localhost:8080/recipes/${recipe.id}`, {
+    await fetch(apiURL + `/recipes/${recipe.id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
@@ -139,7 +139,7 @@ async function updateRecipe(recipe) {
 }
 
 function getRecipe(id) {
-    fetch(`http://localhost:8080/recipes/${id}`, {
+    fetch(apiURL + `/recipes/${id}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -345,7 +345,7 @@ function displayRecipes(data, selector = false) {
 
 async function saveRecipeToDB(recipe) {
     let body = 'name=' + encodeURIComponent(recipe.name) + '&ingredients=' + encodeURIComponent(JSON.stringify(recipe.ingredients)) + '&instructions=' + encodeURIComponent(recipe.instructions) + '&time=' + encodeURIComponent(recipe.time);
-    await fetch('http://localhost:8080/recipes', {
+    await fetch(apiURL + '/recipes', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
@@ -502,7 +502,7 @@ messageInput.addEventListener('keypress', function (e) {
 })
 
 function deleteRecipe(id) {
-    fetch(`http://localhost:8080/recipes/${id}`, {
+    fetch(apiURL + `/recipes/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
