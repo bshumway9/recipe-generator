@@ -1,5 +1,10 @@
 # Recipe Book and Generator
 
+## Description
+
+This recipe generator uses generative ai to create recipes for the user based on ingredients they have available.
+It uses a sqlite database to store the recipes for the user to access again whenever they want.
+
 ## Resource
 
 **Recipe**
